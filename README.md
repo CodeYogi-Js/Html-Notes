@@ -54,7 +54,7 @@ Previously, web projects were mainly organized by separate languages like HTML, 
 
 Now, the industry is moving toward component-based technologies like [react](https://react.dev/). In component-based development, every small UI part is created as a reusable component that contains its own structure, style, and logic together. This makes large projects easier to manage, improves reusability, and keeps project structure more organized and understandable.
 
-### Previous Web Project Structure (Language-based)
+## Previous Web Project Structure (Language-based)
 projects were separated by languages:
 - HTML → structure
 - CSS → design
@@ -79,7 +79,7 @@ Example: To change one Navbar:
 
 Developers had to work in many files for one small feature.
 
-### Modern Component-Based Structure
+## Modern Component - Based Structure
 Now the industry uses component-based technologies like [react](https://react.dev/).
 One small reusable UI part with its own HTML, CSS, and JavaScript together.
 
@@ -107,7 +107,7 @@ Browsers `do not understand JSX directly`. Before the webpage runs, tools like `
 
 That is why learning HTML, CSS, and JavaScript first makes React much easier to understand.
 
-### HTML History
+## HTML History
 
 HTML was invented by ***Tim Berners-Lee*** in ***1991***.
 Since then, HTML has continued to improve with new versions.
@@ -186,3 +186,78 @@ Today, developers use ***HTML5*** because it is the modern web standard.
 
     Everything visible on the webpage is written inside the `<body>` tag.
 
+## Why is the first HTML file usually named `index.html`?
+
+`index.html` is the **main (default) page** of a website.
+When someone opens a website, they usually type only the website name.
+
+Example:
+
+```text
+https://example.com/
+```
+
+The browser sends a request to the web server.
+
+If no file name is given, the web server automatically looks for:
+
+```text
+index.html
+```
+
+If `index.html` exists, it opens that page. Because of this, `index.html` became the **industry standard** for the first page of a website.
+
+### Why do developers use `index.html`?
+
+- It is the default homepage.
+- The web server looks for it automatically.
+- Users do not need to type `index.html` in the URL.
+- Almost every website uses it.
+
+Example Project:
+
+```text
+project/
+│
+├── index.html
+├── about.html
+└── contact.html
+```
+
+When you open:
+
+```text
+https://example.com/
+```
+
+The server automatically opens:
+
+```text
+index.html
+```
+
+So these usually show the same page:
+
+```text
+https://example.com/
+```
+
+```text
+https://example.com/index.html
+```
+
+### Important Note
+
+`index.html` is **not required by HTML**.
+
+You can name your file anything:
+
+```text
+home.html
+main.html
+welcome.html
+```
+
+These files also work. Developers use `index.html` because web servers automatically open it when no file name is provided.
+
+ ### [Next ➡️](https://github.com/CodeYogi-Js/Html-Notes/blob/main/01_metaTag.md)
