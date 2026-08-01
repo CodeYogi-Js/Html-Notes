@@ -1,7 +1,7 @@
 ## What is a Webpage And Website?
-<u style="color : red" ><i>A webpage is a single document on the internet that displays content such as text, images, audio, videos, and links. It is usually created using HTML, CSS, and JavaScript.
+*A webpage is a single document on the internet that displays content such as text, images, audio, videos, and links. It is usually created using HTML, CSS, and JavaScript.*
 
-A website is a collection of one or more related webpages connected through hyperlinks and hosted under a single domain name.</i></u>
+*A website is a collection of one or more related webpages connected through hyperlinks and hosted under a single domain name.*
 
 ## Besic of HTML
 HTML was invented by Tim Berners-Lee in 1991. HTML stands for HyperText Markup Language. It is not a programming language, it is a markup language for the web.
@@ -191,78 +191,5 @@ Today, developers use ***HTML5*** because it is the modern web standard.
 
     Everything visible on the webpage is written inside the `<body>` tag.
 
-## Why is the first HTML file usually named `index.html`?
-
-`index.html` is the **main (default) page** of a website.
-When someone opens a website, they usually type only the website name.
-
-Example:
-
-```text
-https://example.com/
-```
-
-The browser sends a request to the web server.
-
-If no file name is given, the web server automatically looks for:
-
-```text
-index.html
-```
-
-If `index.html` exists, it opens that page. Because of this, `index.html` became the **industry standard** for the first page of a website.
-
-### Why do developers use `index.html`?
-
-- It is the default homepage.
-- The web server looks for it automatically.
-- Users do not need to type `index.html` in the URL.
-- Almost every website uses it.
-
-Example Project:
-
-```text
-project/
-│
-├── index.html
-├── about.html
-└── contact.html
-```
-
-When you open:
-
-```text
-https://example.com/
-```
-
-The server automatically opens:
-
-```text
-index.html
-```
-
-So these usually show the same page:
-
-```text
-https://example.com/
-```
-
-```text
-https://example.com/index.html
-```
-
-### Important Note
-
-`index.html` is **not required by HTML**.
-
-You can name your file anything:
-
-```text
-home.html
-main.html
-welcome.html
-```
-
-These files also work. Developers use `index.html` because web servers automatically open it when no file name is provided.
 
  ### [Next ➡️](https://github.com/CodeYogi-Js/Html-Notes/blob/main/01_metaTag.md)
