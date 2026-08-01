@@ -1,4 +1,9 @@
-# Besic of HTML
+## What is a Webpage And Website?
+<u style="color : red" ><i>A webpage is a single document on the internet that displays content such as text, images, audio, videos, and links. It is usually created using HTML, CSS, and JavaScript.
+
+A website is a collection of one or more related webpages connected through hyperlinks and hosted under a single domain name.</i></u>
+
+## Besic of HTML
 HTML was invented by Tim Berners-Lee in 1991. HTML stands for HyperText Markup Language. It is not a programming language, it is a markup language for the web.
 
 ### Human analogy:
