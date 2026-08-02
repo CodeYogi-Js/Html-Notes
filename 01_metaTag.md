@@ -384,7 +384,7 @@ These tags control how your webpage looks when someone shares it.
 <!-- Title shown when someone shares the webpage. -->
 ```
 
----
+
 
 ### og:description
 
@@ -396,7 +396,7 @@ These tags control how your webpage looks when someone shares it.
 <!-- Description shown while sharing. -->
 ```
 
----
+
 
 ### og:image
 
@@ -412,8 +412,6 @@ These tags control how your webpage looks when someone shares it.
      1200 × 630 pixels. -->
 ```
 
----
-
 ### og:url
 
 ```html
@@ -424,7 +422,7 @@ These tags control how your webpage looks when someone shares it.
 <!-- The original URL of the webpage being shared. -->
 ```
 
----
+
 
 ### og:type
 
