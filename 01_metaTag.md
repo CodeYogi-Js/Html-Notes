@@ -1,210 +1,339 @@
-## Content Inside the `<head>` Tag
+## HTML `<head>` Notes
+
+This chapter explains everything commonly written inside the `<head>` tag.
 
 The `<head>` contains information **about the webpage**.
 
-This information is **not visible** on the webpage but helps browsers, search engines, and social media understand your website.
+This information is **not visible** on the webpage but helps:
 
-Common things inside `<head>`:
+- Browsers
+- Search engines
+- Social media platforms
 
-- Meta tags
-- Page title
-- CSS files
-- Favicon
-- JavaScript files
-- SEO information
-- Social media information
+understand your website correctly.
 
 
 
-### 1. `<!DOCTYPE html>`
+## Chapter 1 → HTML Document Structure
+**`<!DOCTYPE html>`**
 
 ```html
 <!DOCTYPE html>
 ```
 
-Tells the browser this document uses **HTML5**.
+```html
+<!-- Tells the browser this document uses HTML5 -->
+```
 
+---
 
-
-### 2. `<html lang="en">`
+**`<html lang="en">`**
 
 ```html
 <html lang="en">
 ```
 
-The root (main) tag of the webpage.
+```html
+<!-- Root element of the webpage.
+     lang="en" tells browsers and search engines that the page language is English. -->
+```
 
-`lang="en"` tells browsers and search engines that the page language is English.
 
+## Chapter 2 → Basic Meta Tags
 
-
-### 3. `<meta charset="UTF-8">`
+### Character Encoding
 
 ```html
 <meta charset="UTF-8">
 ```
 
-Sets the character encoding.
-
-Allows almost every language and emoji to display correctly.
-
-Example:
-
-- English
-- বাংলা
-- हिन्दी
-- 😊
-
-Without this tag, some characters may appear as strange symbols.
-
-
-
-### 4. Viewport Meta Tag
-
 ```html
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+<!-- Sets the character encoding to UTF-8.
+     Allows English, Bengali, Hindi, Emoji 😊 and almost every language
+     to display correctly.
+     Without this, some characters may appear as strange symbols. -->
 ```
 
-Makes the website responsive on mobile devices.
-
-### width=device-width
-
-Makes the webpage width equal to the device screen.
-
-### initial-scale=1.0
-
-Opens the webpage at normal zoom (100%).
 
 
-
-### 5. `<title>`
+### Viewport
 
 ```html
-<title>My Website</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 ```
 
-Sets the webpage title.
+```html
+<!-- Makes the website responsive on phones and tablets.
 
-Appears in:
+     width=device-width
+         → Makes the webpage width equal to the device screen width.
 
-- Browser tab
-- Google search results
-- Bookmarks
+     initial-scale=1.0
+         → Opens the page at normal zoom (100%). -->
+```
+
+
+## Chapter 3 → Page Title
+
+ `<title>`
+
+```html
+<title>DevNest | Learn HTML, CSS, JavaScript & React</title>
+```
+
+```html
+<!-- The page title.
+
+     Appears:
+
+     ✔ Browser tab
+
+     ✔ Google search results
+
+     ✔ Bookmarks
+
+     ✔ Social sharing -->
+```
 
 
 
-### 6. Meta Description
+### Chapter 4 → SEO Tags
+
+## Description
 
 ```html
 <meta
 name="description"
-content="Learn HTML, CSS and JavaScript">
+content="Discover helpful articles...">
 ```
 
-Short summary of the webpage.
+```html
+<!-- Short description of the webpage.
 
-Search engines often show this below the page title.
+     Search engines often show this below the page title.
 
-Helps users know what the page is about.
+     Helps users know what the page is about.
+
+     Recommended length:
+
+     around 150-160 characters. -->
+```
 
 
 
-### 7. Meta Keywords
+### Keywords
 
 ```html
 <meta
 name="keywords"
-content="HTML,CSS,JavaScript">
+content="technology, web development...">
 ```
 
-Earlier used for SEO.
+```html
+<!-- Old SEO tag.
 
-Today Google ignores this tag.
+     Earlier Google used it.
 
-Rarely used on modern websites.
+     Today Google ignores it because people abused it by adding
+     unrelated keywords.
+
+     Some smaller search engines may still read it. -->
+```
 
 
 
-### 8. Author
+### Author
 
 ```html
 <meta
 name="author"
-content="Babu Das">
+content="Your Name">
 ```
-
-Shows who created the webpage.
-
-Mostly useful for documentation.
-
-
-
-### 9. Refresh
 
 ```html
-<meta
-http-equiv="refresh"
-content="10">
+<!-- Shows who created the webpage.
+
+     Mainly useful for documentation.
+
+     Doesn't improve SEO much. -->
 ```
 
-Automatically refreshes the webpage every 10 seconds.
-
-Commonly used for:
-
-- Dashboards
-- Live scores
-- Monitoring systems
-
-Not recommended for normal websites.
 
 
+### Canonical URL
 
-### 10. CSS File
+```html
+<link rel="canonical"
+href="https://www.devnest.dev/">
+```
+
+```html
+<!-- Prevents duplicate content problems.
+
+     Tells Google:
+
+     "This is the main/original URL of this page."
+
+     Example:
+
+     example.com
+
+     example.com/
+
+     example.com/index.html
+
+     All may show the same page.
+
+     Canonical tells Google which one should be indexed. -->
+```
+
+
+### Robots
+**Index & Follow**
+
+```html
+<meta name="robots"
+content="index, follow">
+```
+
+```html
+<!--
+robots
+
+    → Gives instructions to search engine crawlers
+      (Google, Bing, Yahoo, etc.).
+
+index
+
+    → Allow search engines to store (index) this page
+      and show it in search results.
+
+follow
+
+    → Allow search engines to crawl and follow all links
+      (<a href="">) on this page.
+
+Used for:
+
+✔ Home page
+
+✔ About page
+
+✔ Blog
+
+✔ Product page
+
+✔ Documentation
+
+This is the most common setting for public websites.
+
+Note:
+
+Google already assumes "index, follow" by default,
+so this tag is optional unless you want to be explicit.
+-->
+```
+
+### Noindex & Nofollow
+
+```html
+<meta name="robots"
+content="noindex, nofollow">
+```
+
+```html
+<!--
+robots
+
+noindex
+
+    → Do NOT store (index) this page.
+
+      The page should not appear in Google or other
+      search engine results.
+
+nofollow
+
+    → Do NOT follow any links on this page.
+
+      Search engines will not crawl the links found here.
+
+Used for:
+
+❌ Login page
+
+❌ Admin dashboard
+
+❌ Private pages
+
+❌ Thank-you page after form submission
+
+❌ Internal testing pages
+
+This keeps private or unimportant pages out of search
+results and tells search engines not to use the links
+on the page for crawling.
+-->
+```
+
+
+
+## Chapter 5 → CSS, Icons & JavaScript
+
+### CSS
 
 ```html
 <link
 rel="stylesheet"
-href="style.css">
+href="./css/01_color.css">
 ```
 
-Connects an external CSS file to the webpage.
+```html
+<!-- Connects external CSS file to style the webpage. -->
+```
 
 
-### 11. Favicon
+
+### Favicon
 
 ```html
 <link
 rel="icon"
-href="favicon.png">
+type="image/png"
+href="https://cdn-icons-png.flaticon.com/512/10473/10473683.png">
 ```
 
-Adds the small icon shown in the browser tab.
+```html
+<!-- Browser tab icon (favicon). -->
+```
 
- 
 
-### 12. JavaScript File
+
+### External JavaScript
 
 ```html
 <script
 defer
-src="script.js">
+src="./JavaScript/script.js">
 </script>
 ```
 
-Connects an external JavaScript file.
+```html
+<!-- Loads external JavaScript.
 
-`defer` means:
+     defer means:
 
-- Download JavaScript while HTML loads.
-- Run JavaScript after the HTML is fully loaded.
+     1. Download JS while HTML is loading.
 
-This is the recommended way.
+     2. Execute JS only after HTML is completely parsed.
 
- 
+     Best practice for most websites. -->
+```
 
-### 13. Theme Color
+## Chapter 6 → Mobile Support
+
+### Theme Color
 
 ```html
 <meta
@@ -212,105 +341,171 @@ name="theme-color"
 content="#0d6efd">
 ```
 
-Changes the browser's address bar color on supported mobile browsers.
-
- 
-
-### 14. Canonical URL
-
 ```html
-<link
-rel="canonical"
-href="https://example.com">
+<!-- Changes the browser's UI color on supported mobile browsers.
+
+     Mainly visible in Android Chrome.
+
+     Makes the browser address bar match your website theme. -->
 ```
 
-Tells search engines which URL is the original page.
 
-Helps avoid duplicate content.
+### Refresh
 
- 
+```html
+<meta
+http-equiv="refresh"
+content="10">
+```
 
-### 15. Open Graph (OG)
+```html
+<!-- Automatically refreshes the webpage every 10 seconds.
+
+     Mostly used for dashboards, live score pages,
+     monitoring systems, etc.
+
+     NOT recommended for normal websites because it annoys users
+     and can interrupt reading. -->
+```
+
+## Chapter 7 → Social Media Meta Tags
+
+These tags control how your webpage looks when someone shares it.
+
+### Open Graph (Facebook, WhatsApp, LinkedIn, etc.)
+
+### og:title
 
 ```html
 <meta property="og:title">
 ```
 
-Used by:
-
-- Facebook
-- WhatsApp
-- LinkedIn
-- Discord
-
-Controls how the webpage looks when someone shares the link.
-
-Common tags:
-
-- og:title
-- og:description
-- og:image
-- og:url
-
- 
-
-### 16. Twitter Card
-
 ```html
-<meta
-name="twitter:card">
+<!-- Title shown when someone shares the webpage. -->
 ```
 
-Controls how the webpage looks when shared on X (Twitter).
+---
 
-Common tags:
-
-- twitter:title
-- twitter:description
-- twitter:image
-
- 
-
-### 17. Robots
+### og:description
 
 ```html
-<meta
-name="robots"
-content="index, follow">
+<meta property="og:description">
 ```
-
-Gives instructions to search engines.
-
-**index**
-
-Allow search engines to show this page in search results.
-
-**follow**
-
-Allow search engines to follow the links on this page.
-
- 
 
 ```html
-<meta
-name="robots"
-content="noindex, nofollow">
+<!-- Description shown while sharing. -->
 ```
 
-***noindex***
+---
 
-Do not show this page in search results.
+### og:image
 
-**nofollow**
+```html
+<meta property="og:image">
+```
 
-Do not follow the links on this page.
+```html
+<!-- Thumbnail image shown in social media preview.
 
-Used for:
+     Recommended:
 
-- Login page
-- Admin page
-- Private page
-- Testing page
+     1200 × 630 pixels. -->
+```
+
+---
+
+### og:url
+
+```html
+<meta property="og:url">
+```
+
+```html
+<!-- The original URL of the webpage being shared. -->
+```
+
+---
+
+### og:type
+
+```html
+<meta property="og:type">
+```
+
+```html
+<!-- Defines the type of content.
+
+website
+
+article
+
+profile
+
+video.movie
+
+music.song
+
+etc. -->
+```
+
+
+## Twitter / X Card
+
+### twitter:card
+
+```html
+<meta name="twitter:card">
+```
+
+```html
+<!-- Tells Twitter to use a large image preview. -->
+```
+
+
+
+### twitter:title
+
+```html
+<meta name="twitter:title">
+```
+
+```html
+<!-- Twitter share title. -->
+```
+
+
+
+### twitter:description
+
+```html
+<meta name="twitter:description">
+```
+
+```html
+<!-- Twitter share description. -->
+```
+
+
+
+### twitter:image
+
+```html
+<meta name="twitter:image">
+```
+
+```html
+<!-- Image displayed in Twitter/X share preview. -->
+```
+
+### twitter:url
+
+```html
+<meta name="twitter:url">
+```
+
+```html
+<!-- URL used when sharing on Twitter/X. -->
+```
 
 ### [⬅️ Previous](https://github.com/CodeYogi-Js/Html-Notes)
 
